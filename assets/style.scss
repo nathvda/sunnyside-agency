@@ -93,13 +93,13 @@ a, a:hover, a:active {
 body{
     font-size:18px;
     font-family:barlow;
+    overflow-x:hidden;
     
 
     header{
         @include position(column, space-between, center);
         @include backgrounds('photos/image-header.jpg');
 
-        width:100%;
         height: 29.88em;
         padding:1.77em 1.33em;
 
@@ -115,36 +115,9 @@ body{
        
            li{ 
             display:none;
-            color:$dark--text;
-            font-size:1.11em;
 
-            &:last-of-type{
-                @include title;
-                background-color:$second--color;
-                color:$third--color;
-                padding:1em 2em;
-                border-radius:100px;
-                text-transform:uppercase
-            }
         }
 
-            ul:hover{
-                @include position(column, space-between, center);
-                position:absolute;
-                background-color:$white;
-                padding:2.16em;
-                height:16.94em;
-                width:90vw;
-                text-align:center;
-
-                svg{
-                    display:none;
-                }              
-                
-            li{
-                  display:block;
-
-            }
         }
 
      }
@@ -254,7 +227,6 @@ body{
         letter-spacing:2px;
     }
 
-}
 
 .testi ul{
     @include position(column, space-evenly, center);
@@ -337,45 +309,166 @@ body{
 
 @media screen and (min-width:800px){ 
     
-  
+    @mixin position($dir, $justify, $align){
+        display:flex;
+        flex-direction:$dir;
+        justify-content:$justify;
+        align-items:$align;
+    }
+
+
   body{
     font-size:18px;
     
     header{ 
+       @include position(column, flex-start, center);
        height:44.44em;
        background-size:auto 100%;
        background-repeat:no-repeat;
        background-color:#3cbdfe;
 
+    
+
+       h1{ font-size: 3.1em;
+    margin-top:3em;}
 
     ul {
-        display:block;
+        display:flex;
+        justify-content:space-between;
+        width:30em;
+
+        svg{ display: none;}
 
         li{
              display:block;
+             color:$white;
+             padding:1em;
+             font-size:1em;
+            }
+
+            li:last-of-type {
+                background-color:$white;
+                padding:1em 2em;
+                border-radius:100px;
+                color:$third--color;
+                font-family:fraunces;
+                text-transform:uppercase;
+            }    
+            
+            li:last-of-type:hover{
+                background-color:hsl(0,0,100%,0.5);
             }
     }
 
     }
 
     .transform{
+
+        width:100vw;
+
+        @include position(row-reverse, space-between, flex-start);
+
+
+        article{
+            text-align:left;
+            width:50vw;
+            padding:9.16em;
+        }
+
         img{
             width:50vw;
+            height:50vw;
+            object-fit:cover;
     }
 
 }
-        
+
+    .standoout{
+        margin-top:-5px;
+        line-height:0.8;
+
+        width:100vw;
+
+
+        @include position(row, space-between, flex-start);
+
+
+        article{
+            text-align:left;
+            width:50vw;
+            padding:9.16em;
+        }
+
+        img{
+            width:50vw;
+            height:50%;
+            object-fit:cover;
     }
+}
+.graph-photo{
+    @include position(row, flex-start,center);
+    width:100vw;
+
+    .graphicdesign{
+        width:50vw;
+        height:50vw;
+    
+        p{
+            height:4em;
+        }
+    }
+
+    .photography{
+        width:50vw;
+        height:50vw;
+
+        p{
+            height:4em;
+        }
+
+    }
+
+}
+       
+.testi{
+
+    ul {
+
+        @include position(row, center, center);
+    }
+}
+
+.fourpictures{
+
+    @include position(row, flex-start, flex-start);
+    width:100vw;
+
+    picture{
+        width:25%;
+
+        img{
+            width:25vw;
+            height:24.83;
+            object-fit:cover;
+
+        }
+    }
+}
+
+footer { 
+    
+    .footer__links--primary{
+        width:30%;
+    }
+
+    .footer__links--secondary{
+        width:30%;
+    }
+  
+
+}
     
 
-
-
-
-
-
-
-
-
-
-
+  }
+}
 
