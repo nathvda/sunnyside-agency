@@ -28,7 +28,7 @@ body {
 body header {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   background-image: url("photos/image-header.jpg");
   background-size: cover;
@@ -64,6 +64,8 @@ body h1 {
   text-align: center;
   text-transform: uppercase;
   color: hsl(0deg, 0%, 100%);
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 body h1 + svg {
   margin-bottom: 2em;
@@ -284,7 +286,7 @@ footer ul:last-of-type svg {
   }
   body header h1 {
     font-size: 3.1em;
-    margin-top: 0.5em;
+    margin-top: 2.5em;
     margin-bottom: 1em;
   }
   body header ul {
@@ -412,7 +414,7 @@ footer ul:last-of-type svg {
   }
   body .fourpictures picture img {
     width: 25vw;
-    height: 24.83;
+    height: 24.83em;
     -o-object-fit: cover;
        object-fit: cover;
   }
