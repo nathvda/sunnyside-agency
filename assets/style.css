@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*resetting margins and padding*/
 html, body, ul, li, ol, h1, h2, h3, h4, h5, h6 {
   margin: 0;
@@ -21,9 +22,10 @@ a, a:hover, a:active {
 }
 
 body {
+  overflow-x: hidden;
   font-size: 18px;
   font-family: barlow;
-  overflow-x: hidden;
+  /* Style général des articles */
 }
 body header {
   display: flex;
@@ -51,7 +53,7 @@ body header nav svg {
 body header nav li {
   display: none;
 }
-body h1 {
+body header h1 {
   font-family: "Fraunces";
   font-weight: 900;
   width: -webkit-fit-content;
@@ -67,36 +69,35 @@ body h1 {
   margin-top: 1em;
   margin-bottom: 1em;
 }
-body h1 + svg {
+body header h1 + svg {
   margin-bottom: 2em;
 }
-
-.transform, .standoout, .graph-photo, .testi {
+body .transform, body .standoout, body .graph-photo, body .testi {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
 }
-.transform img, .standoout img, .graph-photo img, .testi img {
+body .transform img, body .standoout img, body .graph-photo img, body .testi img {
   width: 100vw;
 }
-.transform article, .standoout article, .graph-photo article, .testi article {
+body .transform article, body .standoout article, body .graph-photo article, body .testi article {
   padding: 4em 1.33em;
   text-align: center;
 }
-.transform article h2, .standoout article h2, .graph-photo article h2, .testi article h2 {
+body .transform article h2, body .standoout article h2, body .graph-photo article h2, body .testi article h2 {
   font-family: "Fraunces";
   font-weight: 900;
   font-size: 2em;
   letter-spacing: 0.25px;
   color: hsl(212deg, 27%, 19%);
 }
-.transform article p, .standoout article p, .graph-photo article p, .testi article p {
-  color: hsl(210deg, 4%, 67%);
+body .transform article p, body .standoout article p, body .graph-photo article p, body .testi article p {
   letter-spacing: -0.0088em;
   line-height: 1.66;
+  color: hsl(210deg, 4%, 67%);
 }
-.transform .photography, .transform .graphicdesign, .standoout .photography, .standoout .graphicdesign, .graph-photo .photography, .graph-photo .graphicdesign, .testi .photography, .testi .graphicdesign {
+body .transform .photography, body .transform .graphicdesign, body .standoout .photography, body .standoout .graphicdesign, body .graph-photo .photography, body .graph-photo .graphicdesign, body .testi .photography, body .testi .graphicdesign {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -105,175 +106,166 @@ body h1 + svg {
   letter-spacing: 0.5px;
   line-height: 1.5em;
 }
-.transform .graphicdesign, .standoout .graphicdesign, .graph-photo .graphicdesign, .testi .graphicdesign {
+body .transform .graphicdesign, body .standoout .graphicdesign, body .graph-photo .graphicdesign, body .testi .graphicdesign {
   background-image: url("photos/image-graphic-design.jpg");
   background-size: cover;
   background-position: top center;
 }
-.transform .graphicdesign h2, .transform .graphicdesign p, .standoout .graphicdesign h2, .standoout .graphicdesign p, .graph-photo .graphicdesign h2, .graph-photo .graphicdesign p, .testi .graphicdesign h2, .testi .graphicdesign p {
+body .transform .graphicdesign h2, body .transform .graphicdesign p, body .standoout .graphicdesign h2, body .standoout .graphicdesign p, body .graph-photo .graphicdesign h2, body .graph-photo .graphicdesign p, body .testi .graphicdesign h2, body .testi .graphicdesign p {
   color: hsl(167deg, 40%, 24%);
 }
-.transform .graphicdesign article, .standoout .graphicdesign article, .graph-photo .graphicdesign article, .testi .graphicdesign article {
+body .transform .graphicdesign article, body .standoout .graphicdesign article, body .graph-photo .graphicdesign article, body .testi .graphicdesign article {
   padding: 3.27 1em 2.27em 1em;
 }
-.transform .photography, .standoout .photography, .graph-photo .photography, .testi .photography {
+body .transform .photography, body .standoout .photography, body .graph-photo .photography, body .testi .photography {
   background-image: url("photos/image-photography.jpg");
   background-size: cover;
   background-position: top center;
 }
-.transform .photography h2, .transform .photography p, .standoout .photography h2, .standoout .photography p, .graph-photo .photography h2, .graph-photo .photography p, .testi .photography h2, .testi .photography p {
+body .transform .photography h2, body .transform .photography p, body .standoout .photography h2, body .standoout .photography p, body .graph-photo .photography h2, body .graph-photo .photography p, body .testi .photography h2, body .testi .photography p {
   color: hsl(198deg, 62%, 26%);
 }
-
-.transform a {
-  font-family: fraunces;
-  font-size: 0.83em;
-  color: hsl(212deg, 27%, 19%);
-  text-transform: uppercase;
+body .transform a {
   padding: 0.8em;
   position: relative;
   z-index: 2;
+  font-family: fraunces;
+  font-size: 0.83em;
+  text-transform: uppercase;
+  color: hsl(212deg, 27%, 19%);
 }
-.transform a::before {
+body .transform a::before {
   content: " ";
+  height: 0.55em;
+  width: 7.61em;
+  position: absolute;
+  left: 50%;
+  bottom: 0.5em;
   display: block;
+  transform: translateX(-50%);
+  margin-left: auto;
+  z-index: -1;
+  border-radius: 100px;
   background-color: hsl(51deg, 100%, 49%);
-  height: 0.55em;
-  width: 7.61em;
-  left: 50%;
-  bottom: 0.5em;
-  transform: translateX(-50%);
-  position: absolute;
-  border-radius: 100px;
-  margin-left: auto;
-  z-index: -1;
   opacity: 0.3;
   transition: 1s;
 }
-
-.standoout a {
-  font-family: fraunces;
-  font-size: 0.83em;
-  color: hsl(212deg, 27%, 19%);
-  text-transform: uppercase;
+body .standoout a {
   padding: 0.8em;
   position: relative;
   z-index: 2;
+  font-family: fraunces;
+  font-size: 0.83em;
+  text-transform: uppercase;
+  color: hsl(212deg, 27%, 19%);
 }
-.standoout a::before {
+body .standoout a::before {
   content: " ";
-  display: block;
-  background-color: hsl(7deg, 99%, 70%);
   height: 0.55em;
   width: 7.61em;
+  position: absolute;
   left: 50%;
   bottom: 0.5em;
+  display: block;
   transform: translateX(-50%);
-  position: absolute;
-  border-radius: 100px;
   margin-left: auto;
   z-index: -1;
+  border-radius: 100px;
+  background-color: hsl(7deg, 99%, 70%);
   opacity: 0.3;
   transition: 1s;
 }
-
-h3 {
+body h3 {
   font-family: "Fraunces";
   font-weight: 900;
-  font-size: 20px;
-  color: hsl(232deg, 10%, 55%);
-  text-transform: uppercase;
-  text-align: center;
   width: 100vw;
   padding: 3em 2em;
   letter-spacing: 2px;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  color: hsl(232deg, 10%, 55%);
 }
-
-.testi ul {
+body .testi ul {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   padding: 2em;
 }
-.testi ul li {
+body .testi ul li {
   min-height: 19em;
   text-align: center;
 }
-.testi ul li img {
+body .testi ul li img {
   width: 4em;
   height: 4em;
   border-radius: 100px;
 }
-.testi ul li p {
-  color: hsl(213deg, 9%, 39%);
-  line-height: 1.77em;
+body .testi ul li p {
   font-weight: lighter;
+  line-height: 1.77em;
   letter-spacing: -0.0072em;
+  color: hsl(213deg, 9%, 39%);
 }
-.testi ul strong {
+body .testi ul strong {
   font-family: "Fraunces";
   font-weight: 900;
   display: block;
   letter-spacing: -0.0072em;
 }
-.testi ul .testi__list--label {
-  color: hsl(210deg, 4%, 67%);
+body .testi ul .testi__list--label {
   font-size: 0.8em;
   letter-spacing: -0.0055em;
+  color: hsl(210deg, 4%, 67%);
 }
-
-.fourpictures {
+body .fourpictures {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  justify-items: center;
-  align-content: center;
-  line-height: 0;
   width: 100vw;
+  line-height: 0;
 }
-.fourpictures img {
+body .fourpictures img {
   width: 50vw;
   height: 50vw;
   -o-object-fit: cover;
      object-fit: cover;
 }
-
-footer {
+body footer {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: flex-start;
   align-items: center;
+  height: 19.44em;
   padding: 2em;
   background-color: hsla(168deg, 34%, 41%, 0.5);
-  height: 19.44em;
 }
-footer svg {
+body footer svg {
   scale: 1.7;
 }
-footer ul {
+body footer ul {
   display: flex;
   padding: 1em;
 }
-footer ul:first-of-type {
+body footer ul:first-of-type {
   justify-content: space-between;
   width: 100%;
 }
-footer ul:first-of-type a {
+body footer ul:first-of-type a {
   color: hsl(168deg, 34%, 41%);
 }
-footer ul:last-of-type {
+body footer ul:last-of-type {
   justify-content: space-evenly;
   width: 90%;
 }
-footer ul:last-of-type svg {
+body footer ul:last-of-type svg {
   fill: hsl(168deg, 34%, 41%);
 }
 
 @media screen and (min-width: 800px) {
-  body {
-    font-size: 18px;
-  }
   body header {
     display: flex;
     flex-direction: column;
@@ -285,31 +277,31 @@ footer ul:last-of-type svg {
     background-color: #3cbdfe;
   }
   body header h1 {
-    font-size: 3.1em;
     margin-top: 2.5em;
     margin-bottom: 1em;
+    font-size: 3.1em;
   }
   body header ul {
+    width: 30em;
     display: flex;
     justify-content: space-between;
-    width: 30em;
   }
   body header ul svg {
     display: none;
   }
   body header ul li {
     display: block;
-    color: hsl(0deg, 0%, 100%);
     padding: 1em;
     font-size: 1em;
+    color: hsl(0deg, 0%, 100%);
   }
   body header ul li:last-of-type {
-    background-color: hsl(0deg, 0%, 100%);
     padding: 1em 2em;
     border-radius: 100px;
-    color: hsl(212deg, 27%, 19%);
-    font-family: fraunces;
+    font-family: "Fraunces";
     text-transform: uppercase;
+    color: hsl(212deg, 27%, 19%);
+    background-color: hsl(0deg, 0%, 100%);
     transition: 1s;
   }
   body header ul li:last-of-type:hover {
@@ -324,14 +316,14 @@ footer ul:last-of-type svg {
     align-items: flex-start;
   }
   body .transform article {
-    text-align: left;
-    width: 50vw;
-    height: 50vw;
-    padding: 4em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    text-align: left;
+    width: 50vw;
+    height: 50vw;
+    padding: 4em;
   }
   body .transform article a:hover::before {
     opacity: 1;
@@ -344,23 +336,23 @@ footer ul:last-of-type svg {
        object-fit: cover;
   }
   body .standoout {
-    margin-top: -5px;
-    line-height: 0.8;
-    width: 100vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+    width: 100vw;
+    margin-top: -5px;
+    line-height: 0.8;
   }
   body .standoout article {
-    text-align: left;
-    width: 50vw;
-    height: 50vw;
-    padding: 4em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    text-align: left;
+    width: 50vw;
+    height: 50vw;
+    padding: 4em;
   }
   body .standoout article a:hover::before {
     opacity: 1;
