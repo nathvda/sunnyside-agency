@@ -34,8 +34,8 @@ body header {
   background-size: cover;
   background-position: top center;
   width: 100vw;
-  height: 63.7vh;
-  padding: 1.9rem;
+  height: 29.88em;
+  padding: 1.77em 1.33em;
 }
 body header nav {
   display: flex;
@@ -43,7 +43,6 @@ body header nav {
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
-  height: 5vh;
 }
 body header nav ul li {
   display: none;
@@ -52,7 +51,7 @@ body header h1 {
   font-family: "Fraunces";
   font-weight: 900;
   font-size: 40px;
-  height: 30vh;
+  height: 5.44em;
   line-height: 49.32px;
   letter-spacing: 6.25px;
   text-align: center;
@@ -69,10 +68,11 @@ body .transform, body .standoout, body .graph-photo, body .testi {
   align-items: flex-start;
 }
 body .transform img, body .standoout img, body .graph-photo img, body .testi img {
-  width: 100%;
+  width: 100vw;
+  max-height: 17.33em;
 }
 body .transform article, body .standoout article, body .graph-photo article, body .testi article {
-  padding: 4em 1.5em;
+  padding: 4em 1.33em;
   text-align: center;
 }
 body .transform article h2, body .standoout article h2, body .graph-photo article h2, body .testi article h2 {
@@ -84,14 +84,15 @@ body .transform article h2, body .standoout article h2, body .graph-photo articl
 }
 body .transform article p, body .standoout article p, body .graph-photo article p, body .testi article p {
   color: hsl(210deg, 4%, 67%);
-  letter-spacing: 0.25px;
+  letter-spacing: -0.0088em;
+  line-height: 1.66;
 }
 body .transform .photography, body .transform .graphicdesign, body .standoout .photography, body .standoout .graphicdesign, body .graph-photo .photography, body .graph-photo .graphicdesign, body .testi .photography, body .testi .graphicdesign {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  align-items: center;
-  height: 35em;
+  align-items: space-between;
+  height: 33.33em;
   letter-spacing: 0.5px;
   line-height: 1.5em;
 }
@@ -113,6 +114,7 @@ body .transform .photography h2, body .transform .photography p, body .standoout
 }
 body .transform a {
   font-family: fraunces;
+  font-size: 0.83em;
   color: hsl(212deg, 27%, 19%);
   text-transform: uppercase;
   padding: 0.8em;
@@ -123,10 +125,10 @@ body .transform a::before {
   content: " ";
   display: block;
   background-color: hsl(51deg, 100%, 49%);
-  height: 0.6em;
-  width: 100%;
+  height: 0.55em;
+  width: 7.61em;
   left: 50%;
-  bottom: 0.5em;
+  bottom: 0.78em;
   transform: translateX(-50%);
   position: absolute;
   border-radius: 100px;
@@ -136,6 +138,7 @@ body .transform a::before {
 }
 body .standoout a {
   font-family: fraunces;
+  font-size: 0.83em;
   color: hsl(212deg, 27%, 19%);
   text-transform: uppercase;
   padding: 0.8em;
@@ -146,10 +149,10 @@ body .standoout a::before {
   content: " ";
   display: block;
   background-color: hsl(7deg, 99%, 70%);
-  height: 0.6em;
-  width: 100%;
+  height: 0.55em;
+  width: 7.61em;
   left: 50%;
-  bottom: 0.5em;
+  bottom: 0.78em;
   transform: translateX(-50%);
   position: absolute;
   border-radius: 100px;
@@ -175,27 +178,32 @@ body h3 {
   justify-content: space-evenly;
   align-items: center;
   padding: 2em;
-  text-align: center;
 }
 .testi ul li {
-  height: 18em;
+  min-height: 19em;
+  text-align: center;
 }
 .testi ul li img {
   width: 4em;
+  height: 4em;
   border-radius: 100px;
 }
 .testi ul li p {
   color: hsl(213deg, 9%, 39%);
-  line-height: 1.5em;
+  line-height: 1.77em;
+  font-weight: lighter;
+  letter-spacing: -0.0072em;
 }
 .testi ul li strong {
   font-family: "Fraunces";
   font-weight: 900;
   display: block;
+  letter-spacing: -0.0072em;
 }
 .testi ul li .testi__list--label {
   color: hsl(210deg, 4%, 67%);
   font-size: 0.8em;
+  letter-spacing: -0.0055em;
 }
 
 .fourpictures {
@@ -215,11 +223,12 @@ body h3 {
 footer {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   align-items: flex-start;
   align-items: center;
-  padding: 3em 2em;
+  padding: 2em;
   background-color: hsla(168deg, 34%, 41%, 0.5);
+  height: 19.44em;
 }
 footer svg {
   scale: 1.7;

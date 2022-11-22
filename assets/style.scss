@@ -47,6 +47,7 @@ ul, li, ol{
 @mixin artlink($color){
 
     font-family:fraunces;
+    font-size:0.83em;
     color:$dark--desat;
     text-transform:uppercase;
     padding:0.8em;
@@ -57,10 +58,10 @@ ul, li, ol{
         content:" ";
         display:block;
         background-color:$color;
-        height: 0.6em;
-        width:100%;
+        height: 0.55em;
+        width:7.61em;
         left:50%;
-        bottom:0.5em;
+        bottom:0.78em;
         transform:translateX(-50%);
         position:absolute;
         border-radius:100px;
@@ -79,8 +80,6 @@ ul, li, ol{
     justify-content:$justify;
     align-items:$align;
 }
-
-
 
 /*html{
    background-image:url(mobile-design.jpg);
@@ -104,13 +103,12 @@ body{
         @include backgrounds('photos/image-header.jpg');
 
         width:100vw;
-        height:63.7vh;
-        padding:1.9rem;
+        height:29.88em;
+        padding:1.77em 1.33em;
 
         nav{
             @include position(row, space-between, flex-start);
             width:100%;
-            height:5vh;
 
             ul li{
                   display:none;
@@ -122,7 +120,7 @@ body{
             @include title;
 
             font-size: 40px;
-            height:30vh;
+            height:5.44em;
             line-height:49.32px;
             letter-spacing:6.25px;
             text-align:center;
@@ -139,11 +137,12 @@ body{
         @include position(column, flex-start, flex-start);
 
         img{
-            width:100%;
+            width:100vw;
+            max-height:17.33em;
         }
 
         article{
-            padding: 4em 1.5em;
+            padding: 4em 1.33em;
             text-align:center;
 
             h2{
@@ -159,15 +158,16 @@ body{
 
             p{
                 color:$greyish;
-                letter-spacing:0.25px;
+                letter-spacing:-0.0088em;
+                line-height:1.66;
             }
 
         }
 
         %graph-photo{
-            @include position(column, flex-end, center);
-            
-            height: 35em;
+            @include position(column, flex-end, space-between);
+
+            height: 33.33em;
             letter-spacing:0.5px;
             line-height: 1.5em;
 
@@ -222,28 +222,33 @@ body{
 .testi ul{
     @include position(column, space-evenly, center);
     padding:2em;
-    text-align:center;
 
         li{  
-            height:18em;
+            min-height:19em;
+            text-align:center;
             
             img{ width:4em;
-    border-radius:100px;
+                 height:4em;
+                 border-radius:100px;
             }
 
             p{
                 color:$darker--greyish;
-                line-height:1.5em;
+                line-height:1.77em;
+                font-weight:lighter;
+                letter-spacing:-0.0072em;
             }
 
             strong{
                 @include title;
                 display:block;
+                letter-spacing:-0.0072em;
             }
 
             .testi__list--label{
                 color:$greyish;
                 font-size:0.8em;
+                letter-spacing:-0.0055em;
             }
         }
 }
@@ -255,7 +260,6 @@ body{
         align-content:center;
         line-height:0;
 
-
         img{
            width:50vw; 
            height:50vw;
@@ -264,11 +268,11 @@ body{
     }
 
     footer{
-        @include position(column, flex-start, flex-start);
+        @include position(column, space-evenly, flex-start);
         align-items:center;
-        padding:3em 2em;
+        padding:2em;
         background-color:$footer-lighter;
-
+        height:19.44em; 
         svg{
             scale:1.7;
         }
