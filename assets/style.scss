@@ -272,7 +272,6 @@ body{
                 line-height:1.77em;
                 font-weight:lighter;
                 letter-spacing:-0.0072em;
-                padding: 0em 4.7em;
                 }
             }
 
@@ -451,6 +450,11 @@ body{
 
      li{   
         @include position(column, space-between, center);
+
+        p{          
+          padding: 0em 4.7em;
+        
+        }
      }
     }
 }

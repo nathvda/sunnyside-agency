@@ -208,7 +208,6 @@ h3 {
   line-height: 1.77em;
   font-weight: lighter;
   letter-spacing: -0.0072em;
-  padding: 0em 4.7em;
 }
 .testi ul strong {
   font-family: "Fraunces";
@@ -396,6 +395,9 @@ footer ul:last-of-type svg {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+  }
+  body .testi ul li p {
+    padding: 0em 4.7em;
   }
   body .fourpictures {
     display: flex;
