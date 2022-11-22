@@ -1,19 +1,22 @@
 // Primary
 
-$soft: hsl(7, 99%, 70%);
-$yellow: hsl(51, 100%, 49%);
-$dark-desat--graphic: hsl(167, 40%, 24%);
-$dark--photos: hsl(198, 62%, 26%);
+$first--color: hsl(7, 99%, 70%);
+$second--color: hsl(51, 100%, 49%);
+$graphic-section: hsl(167, 40%, 24%);
+$photo-section: hsl(198, 62%, 26%);
 $footer: hsl(168, 34%, 41%);
 $footer-lighter: hsla(168,34%,41%,0.5);
 
 // Neutral
 
-$dark--desat: hsl(212, 27%, 19%);
-$darker--greyish: hsl(213, 9%, 39%);
-$dark--greyish: hsl(232, 10%, 55%);
-$greyish: hsl(210, 4%, 67%);
+$third--color: hsl(212, 27%, 19%);
+$darker--text: hsl(213, 9%, 39%);
+$dark--text: hsl(232, 10%, 55%);
+$greys: hsl(210, 4%, 67%);
 $white: hsl(0, 0%, 100%);
+
+$small: 800px;
+$medium: 1200px;
 
 /*resetting margins and padding*/ 
 
@@ -48,7 +51,7 @@ ul, li, ol{
 
     font-family:fraunces;
     font-size:0.83em;
-    color:$dark--desat;
+    color:$third--color;
     text-transform:uppercase;
     padding:0.8em;
     position:relative;
@@ -81,11 +84,6 @@ ul, li, ol{
     align-items:$align;
 }
 
-/*html{
-   background-image:url(mobile-design.jpg);
-   background-size:cover;
-}
-*/
 
 a, a:hover, a:active { 
     text-decoration:none;
@@ -95,32 +93,68 @@ a, a:hover, a:active {
 body{
     font-size:18px;
     font-family:barlow;
-  //    mix-blend-mode:exclusion;
     
 
     header{
-        @include position(column, flex-start, center);
+        @include position(column, space-between, center);
         @include backgrounds('photos/image-header.jpg');
 
-        width:100vw;
-        height:29.88em;
+        width:100%;
+        height: 29.88em;
         padding:1.77em 1.33em;
 
         nav{
             @include position(row, space-between, flex-start);
             width:100%;
+            position:relative;
+            text-align:right;
 
-            ul li{
-                  display:none;
+            svg { 
+                position:relative;
+           }
+       
+           li{ 
+            display:none;
+            color:$dark--text;
+            font-size:1.11em;
+
+            &:last-of-type{
+                @include title;
+                background-color:$second--color;
+                color:$third--color;
+                padding:1em 2em;
+                border-radius:100px;
+                text-transform:uppercase
+            }
+        }
+
+            ul:hover{
+                @include position(column, space-between, center);
+                position:absolute;
+                background-color:$white;
+                padding:2.16em;
+                height:16.94em;
+                width:90vw;
+                text-align:center;
+
+                svg{
+                    display:none;
+                }              
+                
+            li{
+                  display:block;
 
             }
         }
 
+     }
+
         h1{ 
             @include title;
 
-            font-size: 40px;
-            height:5.44em;
+            width:fit-content;
+            font-size: 2.22em;
+            height:98px;
             line-height:49.32px;
             letter-spacing:6.25px;
             text-align:center;
@@ -138,7 +172,6 @@ body{
 
         img{
             width:100vw;
-            max-height:17.33em;
         }
 
         article{
@@ -153,11 +186,11 @@ body{
                 }
                
                 letter-spacing:0.25px;
-                color: $dark--desat;
+                color: $third--color;
             }
 
             p{
-                color:$greyish;
+                color:$greys;
                 letter-spacing:-0.0088em;
                 line-height:1.66;
             }
@@ -165,7 +198,7 @@ body{
         }
 
         %graph-photo{
-            @include position(column, flex-end, space-between);
+            @include position(column, flex-end, center);
 
             height: 33.33em;
             letter-spacing:0.5px;
@@ -177,16 +210,20 @@ body{
 
            @include backgrounds('photos/image-graphic-design.jpg');
      
-           h2, p{ color: $dark-desat--graphic;
+           h2, p{ color: $graphic-section;
         }
 
+        article{
+            padding: 3.27 1em 2.27em 1em;
+
         }
+    }
 
         .photography{
             @include backgrounds('photos/image-photography.jpg');
             @extend %graph-photo;   
 
-            h2, p{ color: $dark--photos;
+            h2, p{ color: $photo-section;
             }
         }
     }
@@ -194,14 +231,14 @@ body{
     .transform { 
      
         a { 
-        @include artlink($yellow);
+        @include artlink($second--color);
      }
 
     }
      .standoout { 
      
         a { 
-        @include artlink($soft);
+        @include artlink($first--color);
      }
 
     }
@@ -209,7 +246,7 @@ body{
     h3{
         @include title;
         font-size:20px;
-        color:$greyish;
+        color:$dark--text;
         text-transform:uppercase;
         text-align:center;
         width:100vw;
@@ -233,7 +270,7 @@ body{
             }
 
             p{
-                color:$darker--greyish;
+                color:$darker--text;
                 line-height:1.77em;
                 font-weight:lighter;
                 letter-spacing:-0.0072em;
@@ -246,7 +283,7 @@ body{
             }
 
             .testi__list--label{
-                color:$greyish;
+                color:$greys;
                 font-size:0.8em;
                 letter-spacing:-0.0055em;
             }
@@ -298,6 +335,37 @@ body{
     }
 
 
+@media screen and (min-width:800px){ 
+    
+  
+  body{
+    font-size:18px;
+    
+    header{ 
+       height:44.44em;
+       background-size:auto 100%;
+       background-repeat:no-repeat;
+       background-color:#3cbdfe;
+
+
+    ul {
+        display:block;
+
+        li{
+             display:block;
+            }
+    }
+
+    }
+
+    .transform{
+        img{
+            width:50vw;
+    }
+
+}
+        
+    }
     
 
 
