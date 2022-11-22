@@ -18,11 +18,15 @@ $white: hsl(0, 0%, 100%);
 $small: 800px;
 $medium: 1200px;
 
-/*resetting margins and padding*/ 
+/*resetting margins and padding*/
 
 html, body, ul, li, ol, h1, h2, h3, h4, h5, h6{
     margin:0;
     padding:0;
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 ul, li, ol{
@@ -48,7 +52,6 @@ ul, li, ol{
 
 // colored title
 @mixin artlink($color){
-
     font-family:fraunces;
     font-size:0.83em;
     color:$third--color;
@@ -64,13 +67,14 @@ ul, li, ol{
         height: 0.55em;
         width:7.61em;
         left:50%;
-        bottom:0.78em;
+        bottom:0.5em;
         transform:translateX(-50%);
         position:absolute;
         border-radius:100px;
         margin-left:auto;
         z-index:-1;
         opacity:0.3;
+        transition:1s;
     }
   
 }
@@ -84,6 +88,28 @@ ul, li, ol{
     align-items:$align;
 }
 
+@mixin blocktext{
+    text-align:left;
+    width:50vw;
+    height:50vw;
+    padding:4em;
+    @include position(column, center, flex-start);
+
+    a:hover::before{
+        opacity:1;
+        transition:1s;
+    }
+}
+
+@mixin graphsection{
+    width:50vw;
+    height:50vw;
+    padding:3em;
+
+    p{
+        height:4em;
+    }
+}
 
 a, a:hover, a:active { 
     text-decoration:none;
@@ -246,6 +272,8 @@ body{
                 line-height:1.77em;
                 font-weight:lighter;
                 letter-spacing:-0.0072em;
+                padding: 0em 4.7em;
+                }
             }
 
             strong{
@@ -260,7 +288,7 @@ body{
                 letter-spacing:-0.0055em;
             }
         }
-}
+
 
     .fourpictures{
         display:flex;
@@ -268,6 +296,7 @@ body{
         justify-items:center;
         align-content:center;
         line-height:0;
+        width:100vw;
 
         img{
            width:50vw; 
@@ -303,11 +332,13 @@ body{
             justify-content:space-evenly;
             width:90%;
             
+            svg{ fill : $footer;}
+            
         }
     }
 
 
-@media screen and (min-width:800px){ 
+@media screen and (min-width:$small){ 
     
     @mixin position($dir, $justify, $align){
         display:flex;
@@ -353,10 +384,12 @@ body{
                 color:$third--color;
                 font-family:fraunces;
                 text-transform:uppercase;
+                transition:1s;
             }    
             
             li:last-of-type:hover{
                 background-color:hsl(0,0,100%,0.5);
+                transition:1s;
             }
     }
 
@@ -370,9 +403,7 @@ body{
 
 
         article{
-            text-align:left;
-            width:50vw;
-            padding:9.16em;
+            @include blocktext;
         }
 
         img{
@@ -386,7 +417,6 @@ body{
     .standoout{
         margin-top:-5px;
         line-height:0.8;
-
         width:100vw;
 
 
@@ -394,14 +424,12 @@ body{
 
 
         article{
-            text-align:left;
-            width:50vw;
-            padding:9.16em;
+         @include blocktext;
         }
 
         img{
             width:50vw;
-            height:50%;
+            height:50vw;
             object-fit:cover;
     }
 }
@@ -409,23 +437,8 @@ body{
     @include position(row, flex-start,center);
     width:100vw;
 
-    .graphicdesign{
-        width:50vw;
-        height:50vw;
-    
-        p{
-            height:4em;
-        }
-    }
-
-    .photography{
-        width:50vw;
-        height:50vw;
-
-        p{
-            height:4em;
-        }
-
+    .graphicdesign, .photography{
+        @include graphsection;
     }
 
 }
@@ -435,6 +448,10 @@ body{
     ul {
 
         @include position(row, center, center);
+
+     li{   
+        @include position(column, space-between, center);
+     }
     }
 }
 
@@ -455,14 +472,32 @@ body{
     }
 }
 
-footer { 
-    
+footer {     
     .footer__links--primary{
         width:30%;
+        
+        a{
+            transition:1s;
+        }
+
+        a:hover{color:$white; 
+        transition:1s;
+        }
     }
 
     .footer__links--secondary{
         width:30%;
+
+        a svg{ 
+     transition:1s;
+    }
+
+        a:hover svg{
+            fill:$white;
+            transition:1s;
+         }
+
+
     }
   
 
@@ -471,4 +506,3 @@ footer {
 
   }
 }
-
