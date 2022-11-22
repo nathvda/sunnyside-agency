@@ -276,6 +276,7 @@ body{
         color:$dark--text;
     }
 
+/* Testimonials area */
 
     .testi ul{
     @include position(column, space-evenly, center);
@@ -318,6 +319,7 @@ body{
         }
     }
 
+/* Bottom picture section */
 
     .fourpictures{
         @include position(row, center, center);
@@ -335,6 +337,7 @@ body{
         }
     }
 
+/* Footer and links */ 
     footer{
         @include position(column, space-evenly, center);
 
@@ -375,6 +378,7 @@ body{
 
 }
 
+/* Bigger screens */
 
 @media screen and (min-width:$large){ 
     
