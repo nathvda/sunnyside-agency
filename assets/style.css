@@ -1,0 +1,241 @@
+/*resetting margins and padding*/
+html, body, ul, li, ol, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+ul, li, ol {
+  list-style-type: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/*html{
+   background-image:url(mobile-design.jpg);
+   background-size:cover;
+}
+*/
+a, a:hover, a:active {
+  text-decoration: none;
+}
+
+body {
+  font-size: 18px;
+  font-family: barlow;
+}
+body header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-image: url("photos/image-header.jpg");
+  background-size: cover;
+  background-position: top center;
+  width: 100vw;
+  height: 63.7vh;
+  padding: 1.9rem;
+}
+body header nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  height: 5vh;
+}
+body header nav ul li {
+  display: none;
+}
+body header h1 {
+  font-family: "Fraunces";
+  font-weight: 900;
+  font-size: 40px;
+  height: 30vh;
+  line-height: 49.32px;
+  letter-spacing: 6.25px;
+  text-align: center;
+  text-transform: uppercase;
+  color: hsl(0deg, 0%, 100%);
+}
+body header h1 + svg {
+  margin-bottom: 2em;
+}
+body .transform, body .standoout, body .graph-photo, body .testi {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+body .transform img, body .standoout img, body .graph-photo img, body .testi img {
+  width: 100%;
+}
+body .transform article, body .standoout article, body .graph-photo article, body .testi article {
+  padding: 4em 1.5em;
+  text-align: center;
+}
+body .transform article h2, body .standoout article h2, body .graph-photo article h2, body .testi article h2 {
+  font-family: "Fraunces";
+  font-weight: 900;
+  font-size: 2em;
+  letter-spacing: 0.25px;
+  color: hsl(212deg, 27%, 19%);
+}
+body .transform article p, body .standoout article p, body .graph-photo article p, body .testi article p {
+  color: hsl(210deg, 4%, 67%);
+  letter-spacing: 0.25px;
+}
+body .transform .photography, body .transform .graphicdesign, body .standoout .photography, body .standoout .graphicdesign, body .graph-photo .photography, body .graph-photo .graphicdesign, body .testi .photography, body .testi .graphicdesign {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: 35em;
+  letter-spacing: 0.5px;
+  line-height: 1.5em;
+}
+body .transform .graphicdesign, body .standoout .graphicdesign, body .graph-photo .graphicdesign, body .testi .graphicdesign {
+  background-image: url("photos/image-graphic-design.jpg");
+  background-size: cover;
+  background-position: top center;
+}
+body .transform .graphicdesign h2, body .transform .graphicdesign p, body .standoout .graphicdesign h2, body .standoout .graphicdesign p, body .graph-photo .graphicdesign h2, body .graph-photo .graphicdesign p, body .testi .graphicdesign h2, body .testi .graphicdesign p {
+  color: hsl(167deg, 40%, 24%);
+}
+body .transform .photography, body .standoout .photography, body .graph-photo .photography, body .testi .photography {
+  background-image: url("photos/image-photography.jpg");
+  background-size: cover;
+  background-position: top center;
+}
+body .transform .photography h2, body .transform .photography p, body .standoout .photography h2, body .standoout .photography p, body .graph-photo .photography h2, body .graph-photo .photography p, body .testi .photography h2, body .testi .photography p {
+  color: hsl(198deg, 62%, 26%);
+}
+body .transform a {
+  font-family: fraunces;
+  color: hsl(212deg, 27%, 19%);
+  text-transform: uppercase;
+  padding: 0.8em;
+  position: relative;
+  z-index: 2;
+}
+body .transform a::before {
+  content: " ";
+  display: block;
+  background-color: hsl(51deg, 100%, 49%);
+  height: 0.6em;
+  width: 100%;
+  left: 50%;
+  bottom: 0.5em;
+  transform: translateX(-50%);
+  position: absolute;
+  border-radius: 100px;
+  margin-left: auto;
+  z-index: -1;
+  opacity: 0.3;
+}
+body .standoout a {
+  font-family: fraunces;
+  color: hsl(212deg, 27%, 19%);
+  text-transform: uppercase;
+  padding: 0.8em;
+  position: relative;
+  z-index: 2;
+}
+body .standoout a::before {
+  content: " ";
+  display: block;
+  background-color: hsl(7deg, 99%, 70%);
+  height: 0.6em;
+  width: 100%;
+  left: 50%;
+  bottom: 0.5em;
+  transform: translateX(-50%);
+  position: absolute;
+  border-radius: 100px;
+  margin-left: auto;
+  z-index: -1;
+  opacity: 0.3;
+}
+body h3 {
+  font-family: "Fraunces";
+  font-weight: 900;
+  font-size: 20px;
+  color: hsl(210deg, 4%, 67%);
+  text-transform: uppercase;
+  text-align: center;
+  width: 100vw;
+  padding: 3em 2em;
+  letter-spacing: 2px;
+}
+
+.testi ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 2em;
+  text-align: center;
+}
+.testi ul li {
+  height: 18em;
+}
+.testi ul li img {
+  width: 4em;
+  border-radius: 100px;
+}
+.testi ul li p {
+  color: hsl(213deg, 9%, 39%);
+  line-height: 1.5em;
+}
+.testi ul li strong {
+  font-family: "Fraunces";
+  font-weight: 900;
+  display: block;
+}
+.testi ul li .testi__list--label {
+  color: hsl(210deg, 4%, 67%);
+  font-size: 0.8em;
+}
+
+.fourpictures {
+  display: flex;
+  flex-wrap: wrap;
+  justify-items: center;
+  align-content: center;
+  line-height: 0;
+}
+.fourpictures img {
+  width: 50vw;
+  height: 50vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-items: center;
+  padding: 3em 2em;
+  background-color: hsla(168deg, 34%, 41%, 0.5);
+}
+footer svg {
+  scale: 1.7;
+}
+footer ul {
+  display: flex;
+  padding: 1em;
+}
+footer ul:first-of-type {
+  justify-content: space-between;
+  width: 100%;
+}
+footer ul:first-of-type a {
+  color: hsl(168deg, 34%, 41%);
+}
+footer ul:last-of-type {
+  justify-content: space-evenly;
+  width: 90%;
+}/*# sourceMappingURL=style.css.map */
