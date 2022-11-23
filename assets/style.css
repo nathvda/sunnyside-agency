@@ -294,7 +294,7 @@ body footer .links ul:last-of-type svg {
 }
 
 /* Bigger screens */
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
   body header {
     display: flex;
     flex-direction: column;
