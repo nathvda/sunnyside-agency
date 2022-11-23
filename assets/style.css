@@ -464,7 +464,7 @@ body footer .links ul:last-of-type svg {
   }
   body .fourpictures picture img {
     width: 25vw;
-    height: 24.83em;
+    height: 30vw;
     -o-object-fit: cover;
        object-fit: cover;
   }
