@@ -54,10 +54,68 @@ body header nav {
 body header nav svg {
   position: relative;
 }
-body header nav li {
+body header nav .hamburger svg {
+  opacity: 1;
+}
+body header nav .hamburger .hamburger__navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   display: none;
 }
-body header h1 {
+body header nav .hamburger .hamburger__navigation ul {
+  display: none;
+  background-color: white;
+  position: absolute;
+  text-align: center;
+  top: 3em;
+  left: 0.5em;
+  right: 0.5em;
+  padding: 1em;
+  min-height: 2em;
+  transition: 1s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body header nav .hamburger .hamburger__navigation ul:before {
+  content: " ";
+  display: block;
+  height: 2em;
+  width: 1em;
+  border-right: 1em solid hsl(0deg, 0%, 100%);
+  position: absolute;
+  top: -1em;
+  right: 0px;
+  -webkit-clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
+          clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
+  border-radius: -108px;
+  border-bottom: 1em solid white;
+}
+body header nav .hamburger .hamburger__navigation ul .navigation__lastlink {
+  background-color: hsl(51deg, 100%, 49%);
+  border-radius: 10em;
+  width: 9em;
+  font-family: "Fraunces";
+  text-transform: uppercase;
+}
+body header nav .hamburger .hamburger__navigation ul .navigation__lastlink a {
+  color: hsl(212deg, 27%, 19%);
+}
+body header nav .hamburger .hamburger__navigation li {
+  padding: 1em;
+}
+body header nav .hamburger .hamburger__navigation a {
+  color: hsl(213deg, 9%, 39%);
+}
+body header nav .hamburger:hover svg {
+  opacity: 0.5;
+}
+body header nav .hamburger:hover .hamburger__navigation {
+  display: block;
+}
+body h1 {
   font-family: "Fraunces";
   font-weight: 900;
   width: -webkit-fit-content;
@@ -73,7 +131,7 @@ body header h1 {
   margin-top: 1em;
   margin-bottom: 1em;
 }
-body header h1 + svg {
+body h1 + svg {
   margin-bottom: 2em;
 }
 body .container {
@@ -308,29 +366,42 @@ body footer .links ul:last-of-type svg {
   body header nav {
     align-items: center;
   }
-  body header h1 {
-    margin-top: 2.5em;
-    margin-bottom: 1em;
-    font-size: 3.1em;
-  }
-  body header ul {
-    width: 30em;
+  body header nav .hamburger {
     display: flex;
-    justify-content: space-between;
+    width: 56vw;
+    justify-content: flex-end;
   }
-  body header ul svg {
+  body header nav .hamburger svg {
     display: none;
   }
-  body header ul li {
-    display: block;
-    padding: 1em;
-    font-size: 1em;
-    color: hsl(0deg, 0%, 100%);
+  body header nav .hamburger .hamburger__button {
+    display: none;
   }
-  body header ul li a {
-    color: hsl(0deg, 0%, 100%);
+  body header nav .hamburger .hamburger__navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0;
   }
-  body header ul li:last-of-type {
+  body header nav .hamburger .hamburger__navigation ul {
+    background-color: transparent;
+    position: relative;
+    text-align: center;
+    top: 0;
+    padding: 0em;
+    min-height: 2em;
+    transition: 1s;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  body header nav .hamburger .hamburger__navigation ul:before {
+    content: " ";
+    display: none;
+  }
+  body header nav .hamburger .hamburger__navigation ul .navigation__lastlink {
     padding: 1em 2em;
     border-radius: 100px;
     font-family: "Fraunces";
@@ -339,24 +410,42 @@ body footer .links ul:last-of-type svg {
     background-color: hsl(0deg, 0%, 100%);
     transition: 0.5s;
   }
-  body header ul li:last-of-type a {
+  body header nav .hamburger .hamburger__navigation ul .navigation__lastlink a {
     color: hsl(212deg, 27%, 19%);
   }
-  body header ul li:last-of-type:hover {
+  body header nav .hamburger .hamburger__navigation ul .navigation__lastlink:hover {
     background-color: hsla(0deg, 0%, 100%, 0.5);
     transition: 0.5s;
   }
-  body header ul li:last-of-type:hover a {
+  body header nav .hamburger .hamburger__navigation ul .navigation__lastlink:hover a {
     color: hsl(0deg, 0%, 100%);
   }
-  body .transform {
+  body header nav .hamburger .hamburger__navigation ul li {
+    padding: 1em;
+  }
+  body header nav .hamburger .hamburger__navigation ul a {
+    color: hsl(0deg, 0%, 100%);
+  }
+  body header nav .hamburger .hamburger:hover {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0;
+  }
+  body header nav h1 {
+    margin-top: 2.5em;
+    margin-bottom: 1em;
+    font-size: 3.1em;
+  }
+  body header nav .transform {
     width: 100vw;
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: flex-start;
   }
-  body .transform article {
+  body header nav .transform article {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -368,19 +457,19 @@ body footer .links ul:last-of-type svg {
     align-items: center;
     padding: 0;
   }
-  body .transform article a:hover::before {
+  body header nav .transform article a:hover::before {
     opacity: 1;
   }
-  body .transform article .article__content {
+  body header nav .transform article .article__content {
     max-width: 60%;
   }
-  body .transform img {
+  body header nav .transform img {
     width: 50vw;
     height: 50vw;
     -o-object-fit: cover;
        object-fit: cover;
   }
-  body .standoout {
+  body header nav .standoout {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -389,7 +478,7 @@ body footer .links ul:last-of-type svg {
     margin-top: -5px;
     line-height: 0.8;
   }
-  body .standoout article {
+  body header nav .standoout article {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -401,86 +490,86 @@ body footer .links ul:last-of-type svg {
     align-items: center;
     padding: 0;
   }
-  body .standoout article a:hover::before {
+  body header nav .standoout article a:hover::before {
     opacity: 1;
   }
-  body .standoout article .article__content {
+  body header nav .standoout article .article__content {
     max-width: 60%;
   }
-  body .standoout img {
+  body header nav .standoout img {
     width: 50vw;
     height: 50vw;
     -o-object-fit: cover;
        object-fit: cover;
   }
-  body .graph-photo {
+  body header nav .graph-photo {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     width: 100vw;
   }
-  body .graph-photo .graphicdesign, body .graph-photo .photography {
+  body header nav .graph-photo .graphicdesign, body header nav .graph-photo .photography {
     width: 50vw;
     height: 50vw;
     padding: 3em;
   }
-  body .graph-photo .graphicdesign p, body .graph-photo .photography p {
+  body header nav .graph-photo .graphicdesign p, body header nav .graph-photo .photography p {
     height: 4em;
     max-width: 18.16em;
   }
-  body .graph-photo .graphicdesign p, body .graph-photo .photography p {
+  body header nav .graph-photo .graphicdesign p, body header nav .graph-photo .photography p {
     max-width: 22.5em;
   }
-  body .testi {
+  body header nav .testi {
     padding: 4em 0;
   }
-  body .testi ul {
+  body header nav .testi ul {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
     min-width: 90%;
   }
-  body .testi ul li {
+  body header nav .testi ul li {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
   }
-  body .testi ul li p {
+  body header nav .testi ul li p {
     height: 6em;
     max-width: 19.44em;
   }
-  body .fourpictures {
+  body header nav .fourpictures {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
     width: 100vw;
   }
-  body .fourpictures picture {
+  body header nav .fourpictures picture {
     width: 25%;
   }
-  body .fourpictures picture img {
+  body header nav .fourpictures picture img {
     width: 25vw;
     height: 30vw;
     -o-object-fit: cover;
        object-fit: cover;
   }
-  body footer .footer__links--primary {
+  body header nav footer .footer__links--primary {
     width: 30%;
   }
-  body footer .footer__links--primary a:hover {
+  body header nav footer .footer__links--primary a:hover {
     color: hsl(0deg, 0%, 100%);
   }
-  body footer .footer__links--secondary {
+  body header nav footer .footer__links--secondary {
     width: 30%;
   }
-  body footer .footer__links--secondary a svg {
+  body header nav footer .footer__links--secondary a svg {
     transition: 0.5s;
   }
-  body footer .footer__links--secondary a:hover svg {
+  body header nav footer .footer__links--secondary a:hover svg {
     fill: hsl(0deg, 0%, 100%);
   }
 }/*# sourceMappingURL=style.css.map */

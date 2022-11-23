@@ -7,13 +7,26 @@ This time, the deadline for finishing the project is **November 24th in the morn
 
 ## More informations about the versions.
 
-**Version 2** (2022/11/23) —
+**Version 2.1** (2022/11/23) —
+- Modification of the HTMl to allow for the hamburger menu.
+- Adding the styles to the mobile version of the hamburger menu.
+
+**Version 2.0** (2022/11/23) —
 
 - Fixed the margin and made it impossible for the text to stretch for the whole width of the screen. 
 - Fixed a few more alignment issues and padding struggles.
 - Improved responsiveness.
 - Fixed image for the ratio to remain the same in desktop version.
+- Sass and Mixins.
+- BEM methodology.
 
-**Version 1** (2022/11/22) — 
 
-The basic HTML and CSS structures have been added, as well as the animations for the links. the HTML and CSS still need to be commented and refactored to allow for greated readibility. I made use of variables to allow for an easier modification of the colors, as well as a few mixins in SASS to reduce the line mount in the Sass file. I also tried to use the BEM methodology for naming the elements that were not nested into one another.
+**Version 1.0** (2022/11/22) — 
+
+- Basic HTML.
+- CSS structures have been added.
+- Animations for the links.
+- Variables for color.
+
+Known issues (last update): 
+- The menu is not responsive at the time.
