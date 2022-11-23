@@ -11,9 +11,11 @@ $third--color: hsl(212, 27%, 19%);
 $darker--text: hsl(213, 9%, 39%);
 $dark--text: hsl(232, 10%, 55%);
 $greys: hsl(210, 4%, 67%);
-$white: hsl(0, 0%, 100%);
+$white: hsl(0%, 0%, 100%);
 
-$large: 800px;
+// Breakpoint(s)
+
+$large: 1024px;
 
 /*resetting margins and padding*/
 
@@ -55,6 +57,7 @@ ul, li, ol{
 
     font-family:fraunces;
     font-size:0.83em;
+    letter-spacing: 1px;
 
     text-transform:uppercase;
 
@@ -105,7 +108,6 @@ ul, li, ol{
 
     a:hover::before{
         opacity:1;
-        transition:1s;
     }
 }
 
@@ -122,6 +124,7 @@ ul, li, ol{
 
 a, a:hover, a:active { 
     text-decoration:none;
+    transition:1s;
 }
 
 
@@ -164,7 +167,7 @@ body{
             width:fit-content;
             font-size: 2.22em;
             height:98px;
-            line-height:49.32px;
+            line-height:1.23;
             letter-spacing:6.25px;
             text-align:center;
             text-transform:uppercase;
@@ -180,9 +183,10 @@ body{
 
     }
 
+
     /* Style général des articles */
 
-    .transform, .standoout, .graph-photo, .testi {
+    .container {
         @include position(column, flex-start, flex-start);
 
         img{
@@ -199,6 +203,7 @@ body{
 
                 font-size:2em;                
                 letter-spacing:0.25px;
+                line-height:1.23;
 
                 color: $third--color;
             }
@@ -278,10 +283,14 @@ body{
 
 /* Testimonials area */
 
+.testi{ 
+    align-items:center;
+}
+
     .testi ul{
     @include position(column, space-evenly, center);
 
-    padding:2em;
+    padding:1.5em;
 
         li{  
             min-height:19em;
@@ -295,6 +304,8 @@ body{
             }
 
             p{
+                width: 18.16em; 
+
                 font-weight:lighter;
                 line-height:1.77em;
                 letter-spacing:-0.0072em;
@@ -319,6 +330,8 @@ body{
         }
     }
 
+    
+
 /* Bottom picture section */
 
     .fourpictures{
@@ -342,38 +355,46 @@ body{
         @include position(column, space-evenly, center);
 
         height:19.44em; 
-        padding:2em;
 
         background-color:$footer-lighter;
 
-        svg{
-            scale:1.7;
-        }
+        .links{ 
+            @include position(column, space-between, center);
+            height:11.44em;
+            width:16.5em;
 
-        ul{ display:flex;
-            padding:1em;
-        }
-        
-        ul:first-of-type{
-         
-            justify-content:space-between;
-            width:100%;
-           
-            a{ 
-                color: $footer;
+            svg{
+                scale:1.7;
+            }
+
+            ul{ display:flex;
+                justify-content:space-around;
+            }
+            
+            .footer__links--primary{
+            
+                justify-content:space-between;
+                width:100%;
+                height:4em;
+            
+                a{ 
+                    color: $footer;
+                }
+
+            }
+
+            ul:last-of-type{
+                justify-content:space-evenly;
+                width:80%;
+                
+                svg{ 
+                    fill : $footer;
+                }
+                
             }
 
         }
 
-        ul:last-of-type{
-            justify-content:space-evenly;
-            width:90%;
-            
-            svg{ 
-                fill : $footer;
-            }
-            
-        }
     }
 
 }
@@ -506,13 +527,17 @@ body{
 
             ul {
 
-                @include position(row, center, center);
+                @include position(row, space-evenly, center);
+
+                width:100vw;
+
 
                 li{   
-                    @include position(column, space-between, center);
+                    @include position(column, space-evenly, center);
 
                     p{          
-                    padding: 0em 4.7em;
+                    height:6em;
+                    width:19.44em
                     
                     }
                 }
@@ -541,12 +566,8 @@ body{
             .footer__links--primary{
                 width:30%;
                 
-                a{
-                    transition:1s;
-                }
 
                 a:hover{color:$white; 
-                transition:1s;
                 }
             }
 
@@ -554,12 +575,12 @@ body{
                 width:30%;
 
                 a svg{ 
-            transition:1s;
+                 transition:1s;
                 }
 
                 a:hover svg{
                     fill:$white;
-                    transition:1s;
+                
                 }
 
 

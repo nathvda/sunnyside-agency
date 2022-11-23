@@ -19,6 +19,7 @@ ul, li, ol {
 
 a, a:hover, a:active {
   text-decoration: none;
+  transition: 1s;
 }
 
 body {
@@ -64,7 +65,7 @@ body header h1 {
   width: fit-content;
   font-size: 2.22em;
   height: 98px;
-  line-height: 49.32px;
+  line-height: 1.23;
   letter-spacing: 6.25px;
   text-align: center;
   text-transform: uppercase;
@@ -75,32 +76,33 @@ body header h1 {
 body header h1 + svg {
   margin-bottom: 2em;
 }
-body .transform, body .standoout, body .graph-photo, body .testi {
+body .container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
 }
-body .transform img, body .standoout img, body .graph-photo img, body .testi img {
+body .container img {
   width: 100vw;
 }
-body .transform article, body .standoout article, body .graph-photo article, body .testi article {
+body .container article {
   padding: 4em 1.33em;
   text-align: center;
 }
-body .transform article h2, body .standoout article h2, body .graph-photo article h2, body .testi article h2 {
+body .container article h2 {
   font-family: "Fraunces";
   font-weight: 900;
   font-size: 2em;
   letter-spacing: 0.25px;
+  line-height: 1.23;
   color: hsl(212deg, 27%, 19%);
 }
-body .transform article p, body .standoout article p, body .graph-photo article p, body .testi article p {
+body .container article p {
   letter-spacing: -0.0088em;
   line-height: 1.66;
   color: hsl(210deg, 4%, 67%);
 }
-body .transform .photography, body .transform .graphicdesign, body .standoout .photography, body .standoout .graphicdesign, body .graph-photo .photography, body .graph-photo .graphicdesign, body .testi .photography, body .testi .graphicdesign {
+body .container .photography, body .container .graphicdesign {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -109,23 +111,23 @@ body .transform .photography, body .transform .graphicdesign, body .standoout .p
   letter-spacing: 0.5px;
   line-height: 1.5em;
 }
-body .transform .graphicdesign, body .standoout .graphicdesign, body .graph-photo .graphicdesign, body .testi .graphicdesign {
+body .container .graphicdesign {
   background-image: url("photos/image-graphic-design.jpg");
   background-size: cover;
   background-position: top center;
 }
-body .transform .graphicdesign h2, body .transform .graphicdesign p, body .standoout .graphicdesign h2, body .standoout .graphicdesign p, body .graph-photo .graphicdesign h2, body .graph-photo .graphicdesign p, body .testi .graphicdesign h2, body .testi .graphicdesign p {
+body .container .graphicdesign h2, body .container .graphicdesign p {
   color: hsl(167deg, 40%, 24%);
 }
-body .transform .graphicdesign article, body .standoout .graphicdesign article, body .graph-photo .graphicdesign article, body .testi .graphicdesign article {
+body .container .graphicdesign article {
   padding: 3.27 1em 2.27em 1em;
 }
-body .transform .photography, body .standoout .photography, body .graph-photo .photography, body .testi .photography {
+body .container .photography {
   background-image: url("photos/image-photography.jpg");
   background-size: cover;
   background-position: top center;
 }
-body .transform .photography h2, body .transform .photography p, body .standoout .photography h2, body .standoout .photography p, body .graph-photo .photography h2, body .graph-photo .photography p, body .testi .photography h2, body .testi .photography p {
+body .container .photography h2, body .container .photography p {
   color: hsl(198deg, 62%, 26%);
 }
 body .transform a {
@@ -134,6 +136,7 @@ body .transform a {
   z-index: 2;
   font-family: fraunces;
   font-size: 0.83em;
+  letter-spacing: 1px;
   text-transform: uppercase;
   color: hsl(212deg, 27%, 19%);
 }
@@ -159,6 +162,7 @@ body .standoout a {
   z-index: 2;
   font-family: fraunces;
   font-size: 0.83em;
+  letter-spacing: 1px;
   text-transform: uppercase;
   color: hsl(212deg, 27%, 19%);
 }
@@ -189,12 +193,15 @@ body h3 {
   text-align: center;
   color: hsl(232deg, 10%, 55%);
 }
+body .testi {
+  align-items: center;
+}
 body .testi ul {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  padding: 2em;
+  padding: 1.5em;
 }
 body .testi ul li {
   min-height: 19em;
@@ -206,6 +213,7 @@ body .testi ul li img {
   border-radius: 100px;
 }
 body .testi ul li p {
+  width: 18.16em;
   font-weight: lighter;
   line-height: 1.77em;
   letter-spacing: -0.0072em;
@@ -243,33 +251,41 @@ body footer {
   justify-content: space-evenly;
   align-items: center;
   height: 19.44em;
-  padding: 2em;
   background-color: hsla(168deg, 34%, 41%, 0.5);
 }
-body footer svg {
+body footer .links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 11.44em;
+  width: 16.5em;
+}
+body footer .links svg {
   scale: 1.7;
 }
-body footer ul {
+body footer .links ul {
   display: flex;
-  padding: 1em;
+  justify-content: space-around;
 }
-body footer ul:first-of-type {
+body footer .links .footer__links--primary {
   justify-content: space-between;
   width: 100%;
+  height: 4em;
 }
-body footer ul:first-of-type a {
+body footer .links .footer__links--primary a {
   color: hsl(168deg, 34%, 41%);
 }
-body footer ul:last-of-type {
+body footer .links ul:last-of-type {
   justify-content: space-evenly;
-  width: 90%;
+  width: 80%;
 }
-body footer ul:last-of-type svg {
+body footer .links ul:last-of-type svg {
   fill: hsl(168deg, 34%, 41%);
 }
 
 /* Bigger screens */
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1024px) {
   body header {
     display: flex;
     flex-direction: column;
@@ -331,7 +347,6 @@ body footer ul:last-of-type svg {
   }
   body .transform article a:hover::before {
     opacity: 1;
-    transition: 1s;
   }
   body .transform img {
     width: 50vw;
@@ -360,7 +375,6 @@ body footer ul:last-of-type svg {
   }
   body .standoout article a:hover::before {
     opacity: 1;
-    transition: 1s;
   }
   body .standoout img {
     width: 50vw;
@@ -386,17 +400,19 @@ body footer ul:last-of-type svg {
   body .testi ul {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    width: 100vw;
   }
   body .testi ul li {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
   }
   body .testi ul li p {
-    padding: 0em 4.7em;
+    height: 6em;
+    width: 19.44em;
   }
   body .fourpictures {
     display: flex;
@@ -417,12 +433,8 @@ body footer ul:last-of-type svg {
   body footer .footer__links--primary {
     width: 30%;
   }
-  body footer .footer__links--primary a {
-    transition: 1s;
-  }
   body footer .footer__links--primary a:hover {
     color: hsl(0deg, 0%, 100%);
-    transition: 1s;
   }
   body footer .footer__links--secondary {
     width: 30%;
@@ -432,6 +444,5 @@ body footer ul:last-of-type svg {
   }
   body footer .footer__links--secondary a:hover svg {
     fill: hsl(0deg, 0%, 100%);
-    transition: 1s;
   }
 }/*# sourceMappingURL=style.css.map */
