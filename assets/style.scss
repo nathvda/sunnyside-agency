@@ -536,11 +536,14 @@ body{
                              background-color:transparent;
                              position:relative;
                              text-align:center; 
+                             width:30em;
                              top:0; 
+                             left:0;
+                             right:0;
                              padding:0em;
                              min-height:2em;
                              transition:1s;
-                             @include position(row, center, center);
+                             @include position(row, space-between, center);
         
                              &:before{                    
                                 content: " ";       
@@ -596,13 +599,17 @@ body{
             }
 
         }
+    }
 
-        h1{ 
-            margin-top: 2.5em;
-            margin-bottom: 1em;
+    h1{ 
+        margin-top: 2.5em;
+        margin-bottom: 1em;
+        font-size: 3.1em;
+    }
 
-            font-size: 3.1em;
-        }
+}
+
+
       
 
         .transform{
@@ -742,8 +749,4 @@ body{
         }
     
     }
-}
-
-}
-
 }
