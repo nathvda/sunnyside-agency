@@ -119,6 +119,7 @@ ul, li, ol{
 
     p{
         height:4em;
+        max-width:18.16em;
     }
 }
 
@@ -194,25 +195,34 @@ body{
         }
 
         article{
-            padding: 4em 1.33em;
+            @include position(column, center, center);
+            width:100%;
+            min-height:20vh;
+            padding:2.33em;
 
             text-align:center;
 
-            h2{
-                @include title;
+            .article__content{      
+                max-width:18.16em;      
+            
+                h2{
+                    @include title;
 
-                font-size:2em;                
-                letter-spacing:0.25px;
-                line-height:1.23;
+                    font-size:2em;                
+                    letter-spacing:0.25px;
+                    line-height:1.23;
 
-                color: $third--color;
-            }
+                    color: $third--color;
+                }
 
-            p{
-                letter-spacing:-0.0088em;
-                line-height:1.66;
+                p{
 
-                color:$greys;
+                    letter-spacing:-0.0088em;
+                    line-height:1.66;
+
+                    color:$greys;
+                }
+
             }
 
         }
@@ -402,14 +412,6 @@ body{
 /* Bigger screens */
 
 @media screen and (min-width:$large){ 
-    
-    @mixin position($dir, $justify, $align){
-        display:flex;
-        flex-direction:$dir;
-        justify-content:$justify;
-        align-items:$align;
-    }
-
 
     body{
     
@@ -421,6 +423,10 @@ body{
             background-repeat:no-repeat;
             background-color:#3cbdfe;
 
+        nav{
+             align-items:center;
+             width:75.11em;
+        }
             
 
             h1{ 
@@ -482,6 +488,13 @@ body{
 
             article{
                 @include blocktext;
+                align-items:center;
+                padding:0;
+
+                .article__content{
+                    max-width:60%;
+                }
+
             }
 
             img{
@@ -502,14 +515,22 @@ body{
         line-height:0.8;
 
         article{
-         @include blocktext;
-        }
+            @include blocktext;
+            align-items:center;
+            padding:0;
 
+                .article__content{
+                    max-width:60%;
+                }
+            }
+
+        
         img{
             width:50vw;
             height:50vw;
             object-fit:cover;
         }
+
         }
 
         .graph-photo{
@@ -519,17 +540,23 @@ body{
 
             .graphicdesign, .photography{
                 @include graphsection;
+
+                p{
+                     max-width:22.5em;
+                    }
             }
 
         }
        
         .testi{
 
+            padding: 4em 0;
+
             ul {
 
                 @include position(row, space-evenly, center);
 
-                width:100vw;
+                min-width:90%;
 
 
                 li{   
@@ -561,7 +588,9 @@ body{
             }
         }
 
-        footer {    
+        footer {   
+            
+          
 
             .footer__links--primary{
                 width:30%;
@@ -585,6 +614,7 @@ body{
 
 
             }
+
         
 
         }

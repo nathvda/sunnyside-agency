@@ -86,10 +86,19 @@ body .container img {
   width: 100vw;
 }
 body .container article {
-  padding: 4em 1.33em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 20vh;
+  padding: 2.33em;
   text-align: center;
 }
-body .container article h2 {
+body .container article .article__content {
+  max-width: 18.16em;
+}
+body .container article .article__content h2 {
   font-family: "Fraunces";
   font-weight: 900;
   font-size: 2em;
@@ -97,7 +106,7 @@ body .container article h2 {
   line-height: 1.23;
   color: hsl(212deg, 27%, 19%);
 }
-body .container article p {
+body .container article .article__content p {
   letter-spacing: -0.0088em;
   line-height: 1.66;
   color: hsl(210deg, 4%, 67%);
@@ -296,6 +305,10 @@ body footer .links ul:last-of-type svg {
     background-repeat: no-repeat;
     background-color: #3cbdfe;
   }
+  body header nav {
+    align-items: center;
+    width: 75.11em;
+  }
   body header h1 {
     margin-top: 2.5em;
     margin-bottom: 1em;
@@ -344,9 +357,14 @@ body footer .links ul:last-of-type svg {
     width: 50vw;
     height: 50vw;
     padding: 4em;
+    align-items: center;
+    padding: 0;
   }
   body .transform article a:hover::before {
     opacity: 1;
+  }
+  body .transform article .article__content {
+    max-width: 60%;
   }
   body .transform img {
     width: 50vw;
@@ -372,9 +390,14 @@ body footer .links ul:last-of-type svg {
     width: 50vw;
     height: 50vw;
     padding: 4em;
+    align-items: center;
+    padding: 0;
   }
   body .standoout article a:hover::before {
     opacity: 1;
+  }
+  body .standoout article .article__content {
+    max-width: 60%;
   }
   body .standoout img {
     width: 50vw;
@@ -396,13 +419,20 @@ body footer .links ul:last-of-type svg {
   }
   body .graph-photo .graphicdesign p, body .graph-photo .photography p {
     height: 4em;
+    max-width: 18.16em;
+  }
+  body .graph-photo .graphicdesign p, body .graph-photo .photography p {
+    max-width: 22.5em;
+  }
+  body .testi {
+    padding: 4em 0;
   }
   body .testi ul {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    width: 100vw;
+    min-width: 90%;
   }
   body .testi ul li {
     display: flex;
