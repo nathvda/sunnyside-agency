@@ -15,7 +15,7 @@ $white: hsl(0%, 0%, 100%);
 
 // Breakpoint(s)
 
-$large: 1024px;
+$large: 800px;
 
 /*resetting margins and padding*/
 
@@ -82,7 +82,7 @@ ul, li, ol{
         background-color:$color;
 
         opacity:0.3;
-        transition:1s;
+        transition:0.5s;
     }
   
 }
@@ -125,7 +125,7 @@ ul, li, ol{
 
 a, a:hover, a:active { 
     text-decoration:none;
-    transition:1s;
+    transition:0.5s;
 }
 
 
@@ -314,7 +314,7 @@ body{
             }
 
             p{
-                width: 18.16em; 
+                max-width: 18.16em; 
 
                 font-weight:lighter;
                 line-height:1.77em;
@@ -425,7 +425,6 @@ body{
 
         nav{
              align-items:center;
-             width:75.11em;
         }
             
 
@@ -454,6 +453,10 @@ body{
                     font-size:1em;
 
                     color:$white;
+
+                    a{ 
+                        color:$white;
+                     }
                     }
 
                     li:last-of-type {
@@ -466,14 +469,22 @@ body{
 
                         color:$third--color;
                         background-color:$white;
+                        
+                        transition:0.5s;
 
-                        transition:1s;
+                        a{ 
+                            color:$third--color;
+                         }
                     }    
                     
                     li:last-of-type:hover{
                         background-color:hsl(0,0,100%,0.5);
 
-                        transition:1s;
+                        transition:0.5s;
+
+                        a{ 
+                            color:$white;
+                         }
                     }
             }
 
@@ -564,7 +575,7 @@ body{
 
                     p{          
                     height:6em;
-                    width:19.44em
+                    max-width:19.44em
                     
                     }
                 }
@@ -604,7 +615,7 @@ body{
                 width:30%;
 
                 a svg{ 
-                 transition:1s;
+                 transition:0.5s;
                 }
 
                 a:hover svg{

@@ -19,7 +19,7 @@ ul, li, ol {
 
 a, a:hover, a:active {
   text-decoration: none;
-  transition: 1s;
+  transition: 0.5s;
 }
 
 body {
@@ -163,7 +163,7 @@ body .transform a::before {
   border-radius: 100px;
   background-color: hsl(51deg, 100%, 49%);
   opacity: 0.3;
-  transition: 1s;
+  transition: 0.5s;
 }
 body .standoout a {
   padding: 0.8em;
@@ -189,7 +189,7 @@ body .standoout a::before {
   border-radius: 100px;
   background-color: hsl(7deg, 99%, 70%);
   opacity: 0.3;
-  transition: 1s;
+  transition: 0.5s;
 }
 body h3 {
   font-family: "Fraunces";
@@ -222,7 +222,7 @@ body .testi ul li img {
   border-radius: 100px;
 }
 body .testi ul li p {
-  width: 18.16em;
+  max-width: 18.16em;
   font-weight: lighter;
   line-height: 1.77em;
   letter-spacing: -0.0072em;
@@ -294,7 +294,7 @@ body footer .links ul:last-of-type svg {
 }
 
 /* Bigger screens */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 800px) {
   body header {
     display: flex;
     flex-direction: column;
@@ -307,7 +307,6 @@ body footer .links ul:last-of-type svg {
   }
   body header nav {
     align-items: center;
-    width: 75.11em;
   }
   body header h1 {
     margin-top: 2.5em;
@@ -328,6 +327,9 @@ body footer .links ul:last-of-type svg {
     font-size: 1em;
     color: hsl(0deg, 0%, 100%);
   }
+  body header ul li a {
+    color: hsl(0deg, 0%, 100%);
+  }
   body header ul li:last-of-type {
     padding: 1em 2em;
     border-radius: 100px;
@@ -335,11 +337,17 @@ body footer .links ul:last-of-type svg {
     text-transform: uppercase;
     color: hsl(212deg, 27%, 19%);
     background-color: hsl(0deg, 0%, 100%);
-    transition: 1s;
+    transition: 0.5s;
+  }
+  body header ul li:last-of-type a {
+    color: hsl(212deg, 27%, 19%);
   }
   body header ul li:last-of-type:hover {
     background-color: hsla(0deg, 0%, 100%, 0.5);
-    transition: 1s;
+    transition: 0.5s;
+  }
+  body header ul li:last-of-type:hover a {
+    color: hsl(0deg, 0%, 100%);
   }
   body .transform {
     width: 100vw;
@@ -442,7 +450,7 @@ body footer .links ul:last-of-type svg {
   }
   body .testi ul li p {
     height: 6em;
-    width: 19.44em;
+    max-width: 19.44em;
   }
   body .fourpictures {
     display: flex;
@@ -470,7 +478,7 @@ body footer .links ul:last-of-type svg {
     width: 30%;
   }
   body footer .footer__links--secondary a svg {
-    transition: 1s;
+    transition: 0.5s;
   }
   body footer .footer__links--secondary a:hover svg {
     fill: hsl(0deg, 0%, 100%);
