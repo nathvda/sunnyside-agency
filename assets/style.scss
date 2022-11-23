@@ -600,15 +600,15 @@ body{
         }
 
         footer {   
-            
-          
 
             .footer__links--primary{
-                width:30%;
-                
 
-                a:hover{color:$white; 
+                width:30%;
+
+                a:hover{
+                    color:$white; 
                 }
+
             }
 
             .footer__links--secondary{
@@ -623,13 +623,9 @@ body{
                 
                 }
 
-
-            }
-
-        
+            }       
 
         }
     
-
     }
 }
