@@ -26,10 +26,6 @@ body {
   overflow-x: hidden;
   font-size: 18px;
   font-family: barlow;
-  /* Style général des articles */
-  /* Testimonials area */
-  /* Bottom picture section */
-  /* Footer and links */
 }
 body header {
   display: flex;
@@ -41,6 +37,18 @@ body header {
   background-position: top center;
   height: 29.88em;
   padding: 1.77em 1.33em;
+}
+body header .logo {
+  background-color: rgb(255, 255, 255);
+  -webkit-mask: url(./svg/logo.svg);
+          mask: url(./svg/logo.svg);
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
+}
+body header .logo img {
+  visibility: hidden;
 }
 body header nav {
   display: flex;
@@ -90,7 +98,7 @@ body header nav .hamburger .hamburger__navigation ul:before {
   right: 0px;
   -webkit-clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
           clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
-  border-radius: -108px;
+  border-radius: 108px;
   border-bottom: 1em solid white;
 }
 body header nav .hamburger .hamburger__navigation ul .navigation__lastlink {
@@ -116,7 +124,7 @@ body header nav .hamburger:hover .hamburger__navigation {
   display: block;
 }
 body h1 {
-  font-family: "Fraunces";
+  font-family: "Fraunces", Arial, Helvetica, sans-serif;
   font-weight: 900;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -135,6 +143,7 @@ body h1 + svg {
   margin-bottom: 2em;
 }
 body .container {
+  /* Style général des sections */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -157,7 +166,7 @@ body .container article .article__content {
   max-width: 18.16em;
 }
 body .container article .article__content h2 {
-  font-family: "Fraunces";
+  font-family: "Fraunces", Arial, Helvetica, sans-serif;
   font-weight: 900;
   font-size: 2em;
   letter-spacing: 0.25px;
@@ -187,7 +196,7 @@ body .container .graphicdesign h2, body .container .graphicdesign p {
   color: hsl(167deg, 40%, 24%);
 }
 body .container .graphicdesign article {
-  padding: 3.27 1em 2.27em 1em;
+  padding: 3.27em 1em 2.27em 1em;
 }
 body .container .photography {
   background-image: url("photos/image-photography.jpg");
@@ -250,7 +259,7 @@ body .standoout a::before {
   transition: 0.5s;
 }
 body h3 {
-  font-family: "Fraunces";
+  font-family: "Fraunces", Arial, Helvetica, sans-serif;
   font-weight: 900;
   width: 100vw;
   padding: 3em 2em;
@@ -261,6 +270,7 @@ body h3 {
   color: hsl(232deg, 10%, 55%);
 }
 body .testi {
+  /* Testimonials area */
   align-items: center;
 }
 body .testi ul {
@@ -287,7 +297,7 @@ body .testi ul li p {
   color: hsl(213deg, 9%, 39%);
 }
 body .testi ul strong {
-  font-family: "Fraunces";
+  font-family: "Fraunces", Arial, Helvetica, sans-serif;
   font-weight: 900;
   display: block;
   letter-spacing: -0.0072em;
@@ -298,6 +308,7 @@ body .testi ul .testi__list--label {
   color: hsl(210deg, 4%, 67%);
 }
 body .fourpictures {
+  /* Bottom picture section */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -313,6 +324,7 @@ body .fourpictures img {
      object-fit: cover;
 }
 body footer {
+  /* Footer and links */
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -328,8 +340,17 @@ body footer .links {
   height: 11.44em;
   width: 16.5em;
 }
-body footer .links svg {
-  scale: 1.7;
+body footer .links .logo {
+  background-color: hsl(168deg, 34%, 41%);
+  -webkit-mask-image: url(./svg/logo.svg);
+          mask-image: url(./svg/logo.svg);
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
+}
+body footer .links .logo img {
+  visibility: hidden;
 }
 body footer .links ul {
   display: flex;
@@ -351,8 +372,8 @@ body footer .links ul:last-of-type svg {
   fill: hsl(168deg, 34%, 41%);
 }
 
-/* Bigger screens */
 @media screen and (min-width: 900px) {
+  /* Bigger screens */
   body header {
     display: flex;
     flex-direction: column;

@@ -38,7 +38,7 @@ ul, li, ol{
 
 // basic title
 @mixin title{
-     font-family: "Fraunces";
+     font-family: "Fraunces", Arial, Helvetica, sans-serif;
      font-weight:900;
 }
 
@@ -140,6 +140,16 @@ body{
         @include position(column, flex-start, center);
         @include backgrounds('photos/image-header.jpg');
 
+        .logo{
+            background-color:rgb(255, 255, 255);
+            mask:url(./svg/logo.svg);
+            mask-repeat:no-repeat;
+            mask-position:center;
+
+            img{visibility:hidden;}
+        }
+
+
         height: 29.88em;
         padding:1.77em 1.33em;
 
@@ -191,7 +201,7 @@ body{
                         top: -1em;
                         right: 0px;
                         clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
-                        border-radius: -108px;
+                        border-radius: 108px;
                         border-bottom: 1em solid white;
                     }    
     
@@ -271,9 +281,10 @@ body{
 
     
 
-    /* Style général des articles */
+
 
     .container {
+            /* Style général des sections */
         @include position(column, flex-start, flex-start);
 
         img{
@@ -332,7 +343,7 @@ body{
             }
 
             article{
-            padding: 3.27 1em 2.27em 1em;
+            padding: 3.27em 1em 2.27em 1em;
 
             }
         }
@@ -377,9 +388,10 @@ body{
         color:$dark--text;
     }
 
-/* Testimonials area */
+
 
     .testi{ 
+        /* Testimonials area */
         align-items:center;
     }
 
@@ -428,9 +440,10 @@ body{
 
     
 
-/* Bottom picture section */
+
 
     .fourpictures{
+        /* Bottom picture section */
         @include position(row, center, center);
         flex-wrap:wrap;
 
@@ -446,8 +459,9 @@ body{
         }
     }
 
-/* Footer and links */ 
+
     footer{
+        /* Footer and links */ 
         @include position(column, space-evenly, center);
 
         height:19.44em; 
@@ -459,8 +473,13 @@ body{
             height:11.44em;
             width:16.5em;
 
-            svg{
-                scale:1.7;
+            .logo{
+                background-color:$footer;
+                mask-image:url(./svg/logo.svg);
+                mask-repeat:no-repeat;
+                mask-position:center;
+    
+                img{visibility:hidden;}
             }
 
             ul{ display:flex;
@@ -495,10 +514,10 @@ body{
 
 } 
 
-/* Bigger screens */
+
 
 @media screen and (min-width:$large){ 
-
+/* Bigger screens */
     body{
     
         header{ 
